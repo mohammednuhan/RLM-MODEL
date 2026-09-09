@@ -2,10 +2,6 @@ import fitz
 
 
 def load_pdf(pdf_path):
-    """
-    Read a PDF and return all text as one string.
-    """
-
     document = fitz.open(pdf_path)
 
     pages = []

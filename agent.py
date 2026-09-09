@@ -1,21 +1,28 @@
-from planner import plan_task
+from pdf_loader import load_pdf
+from chunking import chunk_text
 
 
 def main():
-    task = "Calculate the average of 10, 20, and 30."
+    pdf_path = "data/rlm_sample_knowledge.pdf"
 
-    print("USER TASK")
-    print(task)
+    print("Loading PDF...")
 
-    plan = plan_task(task)
+    text = load_pdf(pdf_path)
 
-    print("\nRLM PLANNER")
-    print("Complexity:", plan["complexity"])
+    print("PDF loaded successfully!")
+    print("Total characters:", len(text))
 
-    print("\nSUBTASKS")
+    print("\nCreating chunks...")
 
-    for i, subtask in enumerate(plan["subtasks"], start=1):
-        print(f"{i}. {subtask}")
+    chunks = chunk_text(text)
+
+    print("Total chunks:", len(chunks))
+
+    for i, chunk in enumerate(chunks, start=1):
+        print("\n" + "=" * 60)
+        print(f"CHUNK {i}")
+        print("=" * 60)
+        print(chunk[:500])
 
 
 if __name__ == "__main__":
