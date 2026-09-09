@@ -1,24 +1,12 @@
-import dotenv
-from openai import Openai
-from rich import rich 
+def main():
+    task = "Calculate the average of 10, 20, and 30."
 
-load_env() 
+    print("USER TASK")
+    print(task)
 
-input = user_input()
-
-model = client (
-    model = "https",
-    client= "OPENROUTER_KEY"
-)
-
-while true :
-    
-    if :
-    input = user_input ( "You >")
-    continue :
-
-    else : 
-        user_input = "/exit"
-        print ( "bye bye ")
+    print("\nRLM ENGINE")
+    print("Task received successfully.")
 
 
+if __name__ == "__main__":
+    main()
